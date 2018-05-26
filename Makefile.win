@@ -4,12 +4,12 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = hangman.o Puzzle.o LetterChecker.o AChecker.o BChecker.o
-LINKOBJ  = hangman.o Puzzle.o LetterChecker.o AChecker.o BChecker.o
-LIBS     = -L"E:/Program Files/Dev-Cpp/MinGW64/lib" -L"E:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
-INCS     = -I"E:/Program Files/Dev-Cpp/MinGW64/include" -I"E:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/Program Files/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
-CXXINCS  = -I"E:/Program Files/Dev-Cpp/MinGW64/include" -I"E:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/Program Files/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"E:/Program Files/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
-BIN      = Hangman.exe
+OBJ      = build/AChecker.o build/BChecker.o build/CChecker.o build/hangman.o build/LetterChecker.o build/Puzzle.o build/LetterFunction.o build/DChecker.o
+LINKOBJ  = build/AChecker.o build/BChecker.o build/CChecker.o build/hangman.o build/LetterChecker.o build/Puzzle.o build/LetterFunction.o build/DChecker.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Users/Dennis/Documents/GitHub/Hangman/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"C:/Users/Dennis/Documents/GitHub/Hangman/include"
+BIN      = bin/Hangman.exe
 CXXFLAGS = $(CXXINCS) -std=c++11
 CFLAGS   = $(INCS) -std=c++11
 RM       = rm.exe -f
@@ -24,17 +24,26 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-hangman.o: hangman.cpp
-	$(CPP) -c hangman.cpp -o hangman.o $(CXXFLAGS)
+build/AChecker.o: src/AChecker.cpp
+	$(CPP) -c src/AChecker.cpp -o build/AChecker.o $(CXXFLAGS)
 
-Puzzle.o: Puzzle.cpp
-	$(CPP) -c Puzzle.cpp -o Puzzle.o $(CXXFLAGS)
+build/BChecker.o: src/BChecker.cpp
+	$(CPP) -c src/BChecker.cpp -o build/BChecker.o $(CXXFLAGS)
 
-LetterChecker.o: LetterChecker.cpp
-	$(CPP) -c LetterChecker.cpp -o LetterChecker.o $(CXXFLAGS)
+build/CChecker.o: src/CChecker.cpp
+	$(CPP) -c src/CChecker.cpp -o build/CChecker.o $(CXXFLAGS)
 
-AChecker.o: AChecker.cpp
-	$(CPP) -c AChecker.cpp -o AChecker.o $(CXXFLAGS)
+build/hangman.o: src/hangman.cpp
+	$(CPP) -c src/hangman.cpp -o build/hangman.o $(CXXFLAGS)
 
-BChecker.o: BChecker.cpp
-	$(CPP) -c BChecker.cpp -o BChecker.o $(CXXFLAGS)
+build/LetterChecker.o: src/LetterChecker.cpp
+	$(CPP) -c src/LetterChecker.cpp -o build/LetterChecker.o $(CXXFLAGS)
+
+build/Puzzle.o: src/Puzzle.cpp
+	$(CPP) -c src/Puzzle.cpp -o build/Puzzle.o $(CXXFLAGS)
+
+build/LetterFunction.o: src/LetterFunction.cpp
+	$(CPP) -c src/LetterFunction.cpp -o build/LetterFunction.o $(CXXFLAGS)
+
+build/DChecker.o: src/DChecker.cpp
+	$(CPP) -c src/DChecker.cpp -o build/DChecker.o $(CXXFLAGS)

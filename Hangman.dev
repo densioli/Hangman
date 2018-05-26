@@ -19,17 +19,17 @@ ObjectOutput=
 LogOutput=
 LogOutputEnabled=0
 OverrideOutput=0
-OverrideOutputName=
+OverrideOutputName=Hangman.exe
 HostApplication=
 UseCustomMakefile=0
 CustomMakefile=
 CommandLine=
-Folders=
+Folders=bin,build,include,src
 IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
 CompilerSettings=0000000000000000000000000
-UnitCount=10
+UnitCount=12
 
 [VersionInfo]
 Major=1
@@ -39,21 +39,21 @@ Build=0
 LanguageID=1033
 CharsetID=1252
 CompanyName=
-FileVersion=
+FileVersion=1.0.0.0
 FileDescription=Developed using the Dev-C++ IDE
 InternalName=
 LegalCopyright=
 LegalTrademarks=
 OriginalFilename=
 ProductName=
-ProductVersion=
+ProductVersion=1.0.0.0
 AutoIncBuildNr=0
 SyncProduct=1
 
 [Unit1]
 FileName=hangman.cpp
 CompileCpp=1
-Folder=
+Folder=src
 Compile=1
 Link=1
 Priority=1000
@@ -62,7 +62,7 @@ BuildCmd=
 
 [Unit2]
 FileName=dictionary.txt
-Folder=
+Folder=bin
 Compile=0
 Link=0
 Priority=1000
@@ -72,7 +72,7 @@ BuildCmd=
 [Unit3]
 FileName=Puzzle.cpp
 CompileCpp=1
-Folder=
+Folder=src
 Compile=1
 Link=1
 Priority=1000
@@ -82,7 +82,7 @@ BuildCmd=
 [Unit4]
 FileName=Puzzle.h
 CompileCpp=1
-Folder=
+Folder=include
 Compile=1
 Link=1
 Priority=1000
@@ -92,7 +92,7 @@ BuildCmd=
 [Unit5]
 FileName=LetterChecker.h
 CompileCpp=1
-Folder=
+Folder=include
 Compile=1
 Link=1
 Priority=1000
@@ -102,7 +102,7 @@ BuildCmd=
 [Unit6]
 FileName=LetterChecker.cpp
 CompileCpp=1
-Folder=
+Folder=src
 Compile=1
 Link=1
 Priority=1000
@@ -112,7 +112,7 @@ BuildCmd=
 [Unit7]
 FileName=AChecker.h
 CompileCpp=1
-Folder=
+Folder=include
 Compile=1
 Link=1
 Priority=1000
@@ -122,7 +122,7 @@ BuildCmd=
 [Unit8]
 FileName=AChecker.cpp
 CompileCpp=1
-Folder=
+Folder=src
 Compile=1
 Link=1
 Priority=1000
@@ -132,7 +132,7 @@ BuildCmd=
 [Unit9]
 FileName=BChecker.h
 CompileCpp=1
-Folder=
+Folder=include
 Compile=1
 Link=1
 Priority=1000
@@ -142,7 +142,27 @@ BuildCmd=
 [Unit10]
 FileName=BChecker.cpp
 CompileCpp=1
-Folder=
+Folder=src
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit11]
+FileName=CChecker.h
+CompileCpp=1
+Folder=include
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit12]
+FileName=CChecker.cpp
+CompileCpp=1
+Folder=src
 Compile=1
 Link=1
 Priority=1000

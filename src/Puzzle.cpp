@@ -1,4 +1,4 @@
-#include "puzzle.h"
+#include "Puzzle.h"
 
 void Puzzle::initGame(const std::string& strDict)
 {

@@ -2,6 +2,6 @@
 
 class AChecker : public LetterChecker
 {
-	public:
-		AChecker();
+	public:		
+		char checkMyLetter(char inputChar);	
 };

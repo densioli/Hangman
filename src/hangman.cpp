@@ -1,12 +1,14 @@
 #include <time.h>
-#include "puzzle.h"
+#include "Puzzle.h"
+#include "LetterFunction.h"
 
 int main(int argc, char** argv)
 {	
 	srand(time(NULL));
-	Puzzle p("dictionary.txt");	
+	Puzzle p("dictionary_many.txt");	
 	std::string strInput;
-	p.displayWordList();	
+	p.displayWordList();
+	LetterFunction *lf = new LetterFunction();
 	
 	while(p.isGame())
 	{		
@@ -14,22 +16,16 @@ int main(int argc, char** argv)
 						
 		while (p.isGame() && p.isAlive() && !p.isWin() )
 		{
-			std::cout << std::string(100, '\n');			
+			std::cout << std::string(75, '\n');	
 			std::cout << "Hangman! Current Lives: " << p.getLives() << " | wins: "<< p.getWins() << " | losses: " << p.getLosses() << "\n\n";
 			p.displayPuzzleString();			
 			p.displayBoard();
 			std::cout <<"Guess a letter > ";
 			std::cin >> strInput;
 			
-			if(strInput.size() == 1)
+			if(strInput.size() == 1) //single char input
 			{
-				LetterChecker* lc;				
-				lc = new LetterChecker(strInput[0]);
-				//char cInput = std::tolower(strInput[0]);
-				
-				char cInput = lc->toLower();
-				
-				//char cInput = LetterChecker::checkLetter(strInput[0], aChecker);
+				char cInput = lf->check(strInput[0]);				
 				
 				if(p.isInBoard(cInput))
 				{
@@ -45,11 +41,11 @@ int main(int argc, char** argv)
 				}
 				else
 				{
+					p.loseLife();
 					//no longer in board
-				}
-				delete lc;
+				}				
 			}
-			else
+			else //multi char input
 			{
 				if(strInput == "quit" || strInput == "exit")
 				{				
@@ -75,5 +71,7 @@ int main(int argc, char** argv)
 			}
 		}			
 	}	
+	delete lf;
+	
 	return 0;
 }

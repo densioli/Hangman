@@ -1,7 +1,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#include "AChecker.h"
+#include <iostream>
 
 class Puzzle
 {
@@ -37,7 +37,7 @@ public:
 	void addLoss() { nLosses++; }	
 	void endGame() {  _isGame = false; }	
 	
-	void loseLife();
+	void loseLife();	
 		
 	Puzzle();
 	Puzzle(std::string strDict);
