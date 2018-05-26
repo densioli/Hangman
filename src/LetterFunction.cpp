@@ -7,6 +7,7 @@ LetterFunction::LetterFunction()
 	vCheckers.push_back(new BChecker());
 	vCheckers.push_back(new CChecker());
 	vCheckers.push_back(new DChecker());
+	vCheckers.push_back(new EChecker());
 }
 
 LetterFunction::~LetterFunction()

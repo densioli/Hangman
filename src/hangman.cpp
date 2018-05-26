@@ -65,7 +65,7 @@ int main(int argc, char** argv)
 			}
 			else if (!p.isAlive())
 			{
-				p.addWin();
+				p.addLoss();
 				std::cout << "\nSorry, the correct word is [" << p.getAnswer() << "]!" << std::endl;
 				system("pause");
 			}
