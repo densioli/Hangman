@@ -1,3 +1,11 @@
+/********************************************************
+* LetterFunction class - creates letter checker objects
+* and uses their checkMyLetter function to check
+* if the user input matches the correct letter
+* 
+* Created by: Dennis Li (dennis.li@ubisoft.org)
+********************************************************/
+
 #include <vector>
 
 #include "AChecker.h"

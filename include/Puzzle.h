@@ -1,3 +1,10 @@
+/********************************************************
+* Puzzle class for Hangman's game functions
+* includes initialization, display, and most game logic
+* 
+* Created by: Dennis Li (dennis.li@ubisoft.org)
+********************************************************/
+
 #include <fstream>
 #include <string>
 #include <vector>

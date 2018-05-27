@@ -1,9 +1,5 @@
 #include "BChecker.h"
 
-char BChecker::checkMyLetter(char inputChar)
-{
-	if(inputChar == 'B' || inputChar == 'b')
-		return 'b';
-	else
-		return '*';
-}
+//override the function "checkMyLetter"
+//create the function definition here
+

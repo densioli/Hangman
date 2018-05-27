@@ -1,9 +1,5 @@
 #include "CChecker.h"
 
-char CChecker::checkMyLetter(char inputChar)
-{
-	if(inputChar == 'C' || inputChar == 'c')
-		return 'c';
-	else
-		return '*';
-}
+//override the function "checkMyLetter"
+//create the function definition here
+
