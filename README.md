@@ -1,10 +1,9 @@
 # Hangman
-Hangman in C++
+Hangman in C++, created for PROSDEV
 
-Folder structure
+##Folder structure
 
-bin: The output executables go here.
-build: This folder contains all object files.
-include: All project header files
-src: The application and only the application’s source files.
-
+1. bin: The output executables go here.
+2. build: This folder contains all object files.
+3. include: All project header files
+4. src: The application and only the application’s source files.
