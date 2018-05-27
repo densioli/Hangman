@@ -1,7 +1,7 @@
 # Hangman
 Hangman in C++, created for PROSDEV
 
-##Folder structure
+## Folder structure
 
 1. bin: The output executables go here.
 2. build: This folder contains all object files.
