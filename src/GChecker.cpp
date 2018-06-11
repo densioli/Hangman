@@ -12,4 +12,6 @@ char GChecker::checkMyLetter(char inputChar)
 	{		
 		return 'g';
 	}
+	return '*';
+	
 }
