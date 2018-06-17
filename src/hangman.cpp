@@ -18,7 +18,7 @@ int main(int argc, char** argv)
 	//p.displayWordList();                      //uncomment to see the word list loaded for the game
 	LetterFunction *lf = new LetterFunction();
 	
-	while(p.isGame() && p2.isGame())
+	while(p.isGame() || p2.isGame())
 	{		
 		p.initPuzzle();
 		p2.initPuzzle();
@@ -59,7 +59,6 @@ int main(int argc, char** argv)
 				if(strInput == "quit" || strInput == "exit")
 				{				
 					p.endGame();
-					p2.endGame();
 				}
 				else 
 				{
@@ -86,8 +85,8 @@ int main(int argc, char** argv)
 		{
 			std::cout << std::string(75, '\n');	
 			std::cout << "Hangman! Current Lives: " << p2.getLives() << " | P2 wins: "<< p2.getWins() << " | P2 losses: " << p2.getLosses() << "\n\n";
-			p.displayPuzzleString();
-			p.displayBoard();
+			p2.displayPuzzleString();
+			p2.displayBoard();
 			std::cout <<"Guess a letter > ";
 			std::cin >> strInput;
 			
@@ -116,8 +115,7 @@ int main(int argc, char** argv)
 			else //multi char input
 			{
 				if(strInput == "quit" || strInput == "exit")
-				{				
-					p.endGame();
+				{
 					p2.endGame();
 				}
 				else 
