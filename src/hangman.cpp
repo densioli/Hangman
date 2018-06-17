@@ -7,26 +7,30 @@
 
 #include <time.h>
 #include "Puzzle.h"
+#include "PuzzleView.h"
 #include "LetterFunction.h"
 
 int main(int argc, char** argv)
 {	
 	srand(time(NULL));
-	Puzzle p("dictionary_many.txt");	
+	Puzzle p("dictionary_many.txt");
+	PuzzleView pV;
 	std::string strInput;
 	//p.displayWordList();                      //uncomment to see the word list loaded for the game
 	LetterFunction *lf = new LetterFunction();
 	
 	while(p.isGame())
 	{		
+		pV.displayWelcomeMessage();
 		p.initPuzzle();
-						
+		
 		while (p.isGame() && p.isAlive() && !p.isWin() )
 		{
-			std::cout << std::string(75, '\n');	
-			std::cout << "Hangman! Current Lives: " << p.getLives() << " | wins: "<< p.getWins() << " | losses: " << p.getLosses() << "\n\n";
-			p.displayPuzzleString();
-			p.displayBoard();
+			std::cout << std::string(75, '\n');
+			pV.displayHangMan(p.getLives());
+			pV.displayScores(p.getLives(), p.getWins(), p.getLosses());
+			pV.displayPuzzleString(p.getPuzzleString());
+			pV.displayBoard(p.getStrBoard());
 			std::cout <<"Guess a letter > ";
 			std::cin >> strInput;
 			
@@ -67,13 +71,18 @@ int main(int argc, char** argv)
 			if(p.isWin())
 			{
 				p.addWin();
-				std::cout << "\nCongratulations, you correctly guessed the word [" << p.getAnswer() << "]!"<< std::endl;
+				pV.displayResult(p.isWin(), p.getAnswer());
 				system("pause");
 			}
 			else if (!p.isAlive())
-			{
+			{	
+				std::cout << std::string(75, '\n');	
+				pV.displayHangMan(p.getLives());
+				pV.displayScores(p.getLives(), p.getWins(), p.getLosses());
+				pV.displayPuzzleString(p.getPuzzleString());
+				pV.displayBoard(p.getStrBoard());
 				p.addLoss();
-				std::cout << "\nSorry, the correct word is [" << p.getAnswer() << "]!" << std::endl;
+				pV.displayResult(p.isWin(), p.getAnswer());
 				system("pause");
 			}
 		}			

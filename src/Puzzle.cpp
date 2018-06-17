@@ -1,5 +1,6 @@
 #include "Puzzle.h"
 
+
 void Puzzle::initGame(const std::string& strDict)
 {
 	nWins = 0;
@@ -65,25 +66,6 @@ void Puzzle::displayWordList()
 	{
 		std::cout << s << std::endl;
 	}
-}
-
-void Puzzle::displayPuzzleString()
-{
-	std::cout << "     ";
-	for(char &c: puzzleString)
-	{	
-		std::cout << c << " ";
-	}		
-	std::cout << "\n\n";
-}
-
-void Puzzle::displayBoard()
-{
-	for(char& c : strBoard)
-	{
-		std::cout << "[" << c << "] ";
-	}
-	std::cout << "\n\n";	
 }
 
 bool Puzzle::isInBoard(const char c)

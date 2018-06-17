@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
 CompilerSettings=0000000000000000000000000
-UnitCount=59
+UnitCount=61
 
 [VersionInfo]
 Major=1
@@ -571,9 +571,9 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit60]
-FileName=src\SChecker.cpp
+FileName=include\PuzzleView.h
 CompileCpp=1
-Folder=src
+Folder=include
 Compile=1
 Link=1
 Priority=1000
@@ -642,6 +642,16 @@ BuildCmd=
 
 [Unit49]
 FileName=src\HChecker.cpp
+CompileCpp=1
+Folder=src
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit61]
+FileName=src\PuzzleView.cpp
 CompileCpp=1
 Folder=src
 Compile=1
