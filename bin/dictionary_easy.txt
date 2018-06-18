@@ -1,3 +1,16 @@
+a
+an
+one
+two
+three
+four
+five
+six
+seven
+eight
+nine
+ten
+zero
 apple
 banana
 cherry
@@ -18,9 +31,7 @@ quince
 raspberry
 strawberry
 tomato
-ugli
 vanilla
 watermelon
-xylocarp
+xylophone
 yam
-zuchinni

@@ -11,20 +11,30 @@ void Puzzle::initGame(const std::string& strDict)
 	}
 }
 
-void Puzzle::initPuzzle()
+void Puzzle::initPuzzle(char diff)
 {
-	_isAlive = true;
-	_isWin = false;
-	nLives = 6;	
-	strBoard = {"abcdefghijklmnopqrstuvwxyz"};
-	answerString = pickWord(); //Get a word for the player to guess
-	puzzleString = "";
-	
-	//Fill the puzzle string with the same number of blanks as the word to guess
-	for(char &c : answerString)
-	{	
-		puzzleString += '_';
-	}	
+		_isAlive = true;
+		_isWin = false;
+		strBoard = {"abcdefghijklmnopqrstuvwxyz"};
+		answerString = pickWord(); //Get a word for the player to guess
+		puzzleString = "";
+		
+		// States number of lives to begin with based on selected difficulty
+		if(diff=='1'){
+			nLives = 7;	
+		}else if(diff=='2'){
+			nLives = 6;	
+		}else if(diff=='3'){
+			nLives = 5;	
+		}else {
+			nLives = 0;
+		}
+		
+		//Fill the puzzle string with the same number of blanks as the word to guess
+		for(char &c : answerString)
+		{	
+			puzzleString += '_';
+		}	
 }
 
 bool Puzzle::initDictionary(const std::string& strFileName)

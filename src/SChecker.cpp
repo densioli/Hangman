@@ -12,6 +12,6 @@ char SChecker::checkMyLetter(char inputChar)
 		return inputChar;
 	}
 	else
-		return defaultLetter;
+		return '*';
 }
 

@@ -12,19 +12,43 @@
 int main(int argc, char** argv)
 {	
 	srand(time(NULL));
-	Puzzle p("dictionary_many.txt");	
+	//Puzzle p("dictionary_many.txt");	
 	std::string strInput;
+	char strDifficulty;
 	//p.displayWordList();                      //uncomment to see the word list loaded for the game
-	LetterFunction *lf = new LetterFunction();
+	LetterFunction *lf = new LetterFunction();	
 	
+	retry:
+		std::cout << std::string(75, '\n');	
+		std::cout <<"Choose a Difficulty: \n[1] Easy \n[2] Medium \n[3] Hard \n> ";
+		std::cin >> strDifficulty;
+		
+		
+		std::string strDictionary;
+		if (strDifficulty == '1')
+			strDictionary="easy";
+		else if (strDifficulty == '2')
+			strDictionary="medium";
+		else if (strDifficulty == '3')
+			strDictionary="hard"; 
+		else{
+			std::cout << "Please choose from 1 to 3\n";
+			system("pause");
+			goto retry;
+		} 
+	
+
+	
+	Puzzle p("dictionary_" + strDictionary + ".txt");
+
 	while(p.isGame())
 	{		
-		p.initPuzzle();
+		p.initPuzzle(strDifficulty);	
 						
 		while (p.isGame() && p.isAlive() && !p.isWin() )
 		{
 			std::cout << std::string(75, '\n');	
-			std::cout << "Hangman! Current Lives: " << p.getLives() << " | wins: "<< p.getWins() << " | losses: " << p.getLosses() << "\n\n";
+			std::cout << "Hangman"<<strDifficulty<<"! Current Lives: " << p.getLives() << " | wins: "<< p.getWins() << " | losses: " << p.getLosses() << "\n\n";
 			p.displayPuzzleString();
 			p.displayBoard();
 			std::cout <<"Guess a letter > ";

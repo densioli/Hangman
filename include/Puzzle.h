@@ -26,8 +26,8 @@ public:
 	int findInAnswer(const char c);	
 	void openPuzzle(const int ansIndex);
 	
-	void initGame(const std::string& strDict);   //get puzzle from dictionary
-	void initPuzzle(); 							//reset lives, get a new word
+	void initGame(const std::string& strDict);  //get puzzle from dictionary
+	void initPuzzle(const char diff);			//reset lives, get a new word
 	void displayWordList();
 	void displayPuzzleString();
 	
