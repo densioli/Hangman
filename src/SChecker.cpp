@@ -6,7 +6,7 @@
 
 char SChecker::checkMyLetter(char inputChar)
 {
-	std::cout << "\nDefault letter 's' used." << std::endl;
+//	std::cout << "\nDefault letter 's' used." << std::endl;
 	if(inputChar == 's' || inputChar == 'S')
 	{		
 		return inputChar;

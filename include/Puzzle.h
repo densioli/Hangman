@@ -21,16 +21,17 @@ private:
 public:
 	bool initDictionary(const std::string& strFileName);	
 	void displayBoard();
+	void displayBoardHint();
 	std::string pickWord();
 	bool isInBoard(const char c);
 	int findInAnswer(const char c);	
 	void openPuzzle(const int ansIndex);
+	void cheat();
 	
 	void initGame(const std::string& strDict);   //get puzzle from dictionary
 	void initPuzzle(); 							//reset lives, get a new word
 	void displayWordList();
-	void displayPuzzleString();
-	
+	void displayPuzzleString();	
 	bool isWin() { return _isWin; }	
 	bool isAlive() { return _isAlive; }
 	bool isGame() { return _isGame; }
