@@ -6,12 +6,12 @@ CC       = gcc.exe
 WINDRES  = windres.exe
 OBJ      = build/AChecker.o build/BChecker.o build/CChecker.o build/hangman.o build/LetterChecker.o build/Puzzle.o build/LetterFunction.o build/DChecker.o build/EChecker.o build/FChecker.o build/GChecker.o build/RChecker.o build/TChecker.o build/UChecker.o build/VChecker.o build/WChecker.o build/XChecker.o build/YChecker.o build/ZChecker.o build/HChecker.o build/IChecker.o build/JChecker.o build/KChecker.o build/LChecker.o build/MChecker.o build/NChecker.o build/OChecker.o build/PChecker.o build/QChecker.o build/SChecker.o
 LINKOBJ  = build/AChecker.o build/BChecker.o build/CChecker.o build/hangman.o build/LetterChecker.o build/Puzzle.o build/LetterFunction.o build/DChecker.o build/EChecker.o build/FChecker.o build/GChecker.o build/RChecker.o build/TChecker.o build/UChecker.o build/VChecker.o build/WChecker.o build/XChecker.o build/YChecker.o build/ZChecker.o build/HChecker.o build/IChecker.o build/JChecker.o build/KChecker.o build/LChecker.o build/MChecker.o build/NChecker.o build/OChecker.o build/PChecker.o build/QChecker.o build/SChecker.o
-LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
-INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"include"
-CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"include"
+LIBS     = -L"P:/Karl/Dev-Cpp/MinGW64/lib" -L"P:/Karl/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"P:/Karl/Dev-Cpp/MinGW64/include" -I"P:/Karl/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"P:/Karl/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"include"
+CXXINCS  = -I"P:/Karl/Dev-Cpp/MinGW64/include" -I"P:/Karl/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"P:/Karl/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"P:/Karl/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"include"
 BIN      = bin/Hangman.exe
-CXXFLAGS = $(CXXINCS) -pg -std=c++11
-CFLAGS   = $(INCS) -pg
+CXXFLAGS = $(CXXINCS) -std=c++11
+CFLAGS   = $(INCS) 
 RM       = rm.exe -f
 
 .PHONY: all all-before all-after clean clean-custom
