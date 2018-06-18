@@ -5,6 +5,7 @@ void Puzzle::initGame(const std::string& strDict)
 	nWins = 0;
 	nLosses = 0;
 	_isGame = true;
+	createScoreboard();
 	if(!initDictionary(strDict))
 	{	
 		//throw an exception
